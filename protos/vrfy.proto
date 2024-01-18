@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+service VrfyService {
+  rpc Verify(VrfyRequest) returns (VrfyResponse) {}
+}
+
+message VrfyRequest {
+  string email = 1;
+}
+
+message VrfyResponse {
+  int32 status_code = 1;
+  optional string error_message = 2;
+}

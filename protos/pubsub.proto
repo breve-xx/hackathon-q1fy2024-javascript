@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message VerificationOutput {
+    string email = 1;
+    bool valid = 2;
+    optional string error_message = 3;
+}

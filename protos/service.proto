@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service MailVerifier {
+  rpc SyntaxVerification(VerificationRequest) returns (VerificationResponse) {}
+  rpc SimpleVerification(VerificationRequest) returns (VerificationResponse) {}
+  rpc FullVerification(VerificationRequest) returns (VerificationResponse) {}
+}
+
+message VerificationRequest {
+  string email = 1;
+}
+
+message VerificationResponse {
+  bool valid = 1;
+  optional string error_message = 2;
+}
